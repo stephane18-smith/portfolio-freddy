@@ -103,11 +103,11 @@ function About() {
                 src="/images/projects/stephane.jpg" 
                 alt="Stéphane Youmbi"
                 className="profile-image"
-                // onError={(e) => {
-                //   e.target.style.display = 'none';
-                //   const placeholder = e.target.parentElement.querySelector('.image-placeholder');
-                //   if (placeholder) placeholder.style.display = 'flex';
-                // }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  const placeholder = e.target.parentElement.querySelector('.image-placeholder');
+                  if (placeholder) placeholder.style.display = 'flex';
+                }}
               />
               <div className="image-placeholder">
                 <div className="placeholder-content">
