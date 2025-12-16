@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
   FaCode, 
+//   FaGraduationCap, 
   FaRocket, 
   FaLightbulb,
   FaUserTie,
@@ -16,6 +17,12 @@ function About() {
     { name: "Conception UI/UX", level: 80, icon: <FaLightbulb /> },
     { name: "Gestion de Projet", level: 75, icon: <FaUserTie /> }
   ];
+
+//   const experiences = [
+//     { year: "2023-2024", title: "Projet Stelonne Market", description: "Développement d'une plateforme e-commerce complète" },
+//     { year: "2022-2023", title: "Formation Full Stack", description: "Perfectionnement en React, Node.js et bases de données" },
+//     { year: "2021-2022", title: "BTS Génie Logiciel", description: "Obtention du diplôme avec mention" }
+//   ];
 
   return (
     <section id="about" className="about">
@@ -70,6 +77,24 @@ function About() {
                 ))}
               </div>
             </div>
+
+            {/* <div className="about-experience">
+              <h4>
+                <FaGraduationCap className="experience-icon" />
+                Parcours & Réalisations
+              </h4>
+              <div className="timeline">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="timeline-item">
+                    <div className="timeline-year">{exp.year}</div>
+                    <div className="timeline-content">
+                      <h5>{exp.title}</h5>
+                      <p>{exp.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
           </div>
           
           <div className="about-image">
@@ -79,18 +104,12 @@ function About() {
                 alt="Stéphane Youmbi"
                 className="profile-image"
                 onError={(e) => {
-                  console.error("Erreur de chargement de l'image:", e.target.src);
                   e.target.style.display = 'none';
                   const placeholder = e.target.parentElement.querySelector('.image-placeholder');
                   if (placeholder) placeholder.style.display = 'flex';
                 }}
-                onLoad={(e) => {
-                  console.log("Image chargée avec succès:", e.target.src);
-                  const placeholder = e.target.parentElement.querySelector('.image-placeholder');
-                  if (placeholder) placeholder.style.display = 'none';
-                }}
               />
-              <div className="image-placeholder" style={{ display: 'flex' }}>
+              <div className="image-placeholder">
                 <div className="placeholder-content">
                   <FaUserTie className="placeholder-icon" />
                   <span className="placeholder-text">Stéphane Youmbi</span>
