@@ -98,7 +98,7 @@ function About() {
           </div>
           
           <div className="about-image">
-            <div className="image-container">
+            {/* <div className="image-container">
               <img 
                 src="/images/projects/stephane.jpg" 
                 alt="Stéphane Youmbi"
@@ -115,7 +115,7 @@ function About() {
                   <span className="placeholder-text">Stéphane Youmbi</span>
                 </div>
               </div>
-            </div>
+            </div> */}
             
             <div className="image-info">
               <div className="info-item">
