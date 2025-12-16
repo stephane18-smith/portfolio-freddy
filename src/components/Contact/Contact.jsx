@@ -366,24 +366,6 @@ const Contact = () => {
                       3. Je vous réponds sous 24 heures<br />
                       4. Nous discutons de votre projet
                     </p>
-                    
-                    {/* <div className="config-info">
-                      <h5>Configuration EmailJS :</h5>
-                      <div className="config-details">
-                        <div className="config-item">
-                          <span className="config-label">Service ID :</span>
-                          <code className="config-value">{EMAILJS_CONFIG.SERVICE_ID}</code>
-                        </div>
-                        <div className="config-item">
-                          <span className="config-label">Template ID :</span>
-                          <code className="config-value">{EMAILJS_CONFIG.TEMPLATE_ID}</code>
-                        </div>
-                        <div className="config-item">
-                          <span className="config-label">Public Key :</span>
-                          <code className="config-value">{EMAILJS_CONFIG.PUBLIC_KEY}</code>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </form>

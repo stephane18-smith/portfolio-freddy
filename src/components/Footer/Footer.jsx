@@ -17,7 +17,7 @@ const Footer = () => {
           
           <div className="footer-social">
             <a 
-              href="https://github.com/stephane18_smith" 
+              href="https://github.com/stephane18-smith" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-link"
