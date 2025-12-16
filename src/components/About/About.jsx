@@ -75,7 +75,7 @@ function About() {
           <div className="about-image">
             <div className="image-container">
               <img 
-                src="/images/projects/stephane.jpg" 
+                src="/images/projects/stephane.png" 
                 alt="Stéphane Youmbi"
                 className="profile-image"
                 onError={(e) => {
