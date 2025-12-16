@@ -155,10 +155,12 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-info-section">
             <div className="contact-info-card">
-              <h3 className="contact-info-title">
-                <FaPaperPlane className="title-icon" />
-                Mes Coordonnées
-              </h3>
+              <div className="contact-info-title-wrapper">
+                <h3 className="contact-info-title">
+                  <FaPaperPlane className="title-icon" />
+                  Mes Coordonnées
+                </h3>
+              </div>
               
               <div className="contact-grid">
                 {contactInfo.map((item, index) => (
@@ -173,8 +175,10 @@ const Contact = () => {
                       animationDelay: `${index * 0.1}s`
                     }}
                   >
-                    <div className="card-icon" style={{ color: item.color }}>
-                      {item.icon}
+                    <div className="card-icon-wrapper">
+                      <div className="card-icon" style={{ color: item.color }}>
+                        {item.icon}
+                      </div>
                     </div>
                     <div className="card-content">
                       <h4>{item.title}</h4>
@@ -187,14 +191,20 @@ const Contact = () => {
             </div>
 
             <div className="availability-section">
-              <div className="availability-header">
-                <FaClock className="availability-icon" />
-                <h3>Disponibilité & Engagement</h3>
+              <div className="availability-header-wrapper">
+                <div className="availability-header-icon-wrapper">
+                  <FaClock className="availability-icon" />
+                </div>
+                <h3 className="availability-title">
+                  Disponibilité & Engagement
+                </h3>
               </div>
               
               <div className="availability-features">
                 <div className="feature">
-                  <div className="feature-icon">🚀</div>
+                  <div className="feature-icon-wrapper">
+                    <div className="feature-icon">🚀</div>
+                  </div>
                   <div className="feature-content">
                     <h4>Réponse rapide</h4>
                     <p>Je réponds sous 24 heures maximum</p>
@@ -202,7 +212,9 @@ const Contact = () => {
                 </div>
                 
                 <div className="feature">
-                  <div className="feature-icon">💼</div>
+                  <div className="feature-icon-wrapper">
+                    <div className="feature-icon">💼</div>
+                  </div>
                   <div className="feature-content">
                     <h4>Flexibilité</h4>
                     <p>Freelance, CDI ou mission</p>
@@ -210,7 +222,9 @@ const Contact = () => {
                 </div>
                 
                 <div className="feature">
-                  <div className="feature-icon">🌍</div>
+                  <div className="feature-icon-wrapper">
+                    <div className="feature-icon">🌍</div>
+                  </div>
                   <div className="feature-content">
                     <h4>Télétravail</h4>
                     <p>Disponible pour le travail à distance</p>
@@ -218,7 +232,9 @@ const Contact = () => {
                 </div>
                 
                 <div className="feature">
-                  <div className="feature-icon">⚡</div>
+                  <div className="feature-icon-wrapper">
+                    <div className="feature-icon">⚡</div>
+                  </div>
                   <div className="feature-content">
                     <h4>Réactivité</h4>
                     <p>Démarrage rapide des projets</p>
@@ -231,10 +247,10 @@ const Contact = () => {
           <div className="contact-form-section">
             <div className="form-container">
               <div className="form-header">
-                <h3>
+                <div className="form-header-icon">
                   <FaEnvelope className="form-icon" />
-                  Envoyez-moi un message
-                </h3>
+                </div>
+                <h3>Envoyez-moi un message</h3>
                 <p className="form-subtitle">
                   Remplissez ce formulaire et je vous répondrai rapidement
                 </p>
@@ -242,7 +258,9 @@ const Contact = () => {
               
               {sendStatus === 'success' && (
                 <div className="alert alert-success">
-                  <FaCheck className="alert-icon" />
+                  <div className="alert-icon-wrapper">
+                    <FaCheck className="alert-icon" />
+                  </div>
                   <div className="alert-content">
                     <h4>✅ Message envoyé avec succès !</h4>
                     <p>Je vous répondrai à l'adresse email fournie dans les plus brefs délais.</p>
@@ -255,7 +273,9 @@ const Contact = () => {
               
               {sendStatus === 'error' && (
                 <div className="alert alert-error">
-                  <FaExclamationTriangle className="alert-icon" />
+                  <div className="alert-icon-wrapper">
+                    <FaExclamationTriangle className="alert-icon" />
+                  </div>
                   <div className="alert-content">
                     <h4>❌ Erreur lors de l'envoi</h4>
                     <p>{sendError || "Veuillez réessayer ou me contacter directement par email."}</p>

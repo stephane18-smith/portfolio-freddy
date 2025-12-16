@@ -3,7 +3,6 @@ import {
   FaShoppingCart, 
   FaCode, 
   FaDesktop, 
-//   FaServer, 
   FaDatabase, 
   FaLock,
   FaChartLine,
@@ -16,11 +15,9 @@ import {
   FaWrench,
   FaExternalLinkAlt,
   FaGlobe,
-//   FaMobileAlt,
   FaShieldAlt,
   FaStar,
   FaCrown,
-//   FaCheck,
   FaReact,
   FaJs,
   FaHtml5,
@@ -145,7 +142,7 @@ const Projects = () => {
                         placeholder.innerHTML = `
                           <div class="placeholder-content">
                             <div class="placeholder-icon" style="color: ${project.color}">
-                              ${project.id === 1 ? '🛒' : '🏰'}
+                              ${project.id === 1 ? '🛒' : '👑'}
                             </div>
                             <div class="placeholder-text">
                               <div class="project-name">${project.title}</div>
@@ -157,19 +154,28 @@ const Projects = () => {
                       }}
                     />
                   ) : (
-                    <div className="image-placeholder">
-                      <div className="placeholder-content">
-                        <div className="placeholder-icon" style={{ color: project.color }}>
-                          {project.mainIcon}
-                        </div>
-                        <div className="placeholder-text">
-                          <div className="project-name">{project.title}</div>
-                          <div className="project-tech">
-                            {project.technologies.map(t => t.name).join(' | ')}
+                    <img 
+                      src="/images/projects/velarion.png" 
+                      alt="Maison Velarion"
+                      className="project-image-img"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'image-placeholder';
+                        placeholder.innerHTML = `
+                          <div class="placeholder-content">
+                            <div class="placeholder-icon" style="color: ${project.color}">
+                              👑
+                            </div>
+                            <div class="placeholder-text">
+                              <div class="project-name">${project.title}</div>
+                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
+                        `;
+                        e.target.parentElement.appendChild(placeholder);
+                      }}
+                    />
                   )}
                 </div>
               </div>
@@ -237,14 +243,14 @@ const Projects = () => {
                     )}
                   </a>
                   
-                  {project.id === 1 && (
+                  {/* {project.id === 1 && (
                     <div className="security-note">
                       <FaShieldAlt />
                       <div>
                         <strong>Sécurité :</strong> Authentification sécurisée & protection des données
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

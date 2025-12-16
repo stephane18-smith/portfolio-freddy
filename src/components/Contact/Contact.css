@@ -58,13 +58,19 @@
   backdrop-filter: blur(10px);
 }
 
+.contact-info-title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
 .contact-info-title {
   color: var(--color-gold);
   font-size: 1.6rem;
-  margin-bottom: 25px;
   display: flex;
   align-items: center;
   gap: 12px;
+  text-align: center;
 }
 
 .title-icon {
@@ -78,6 +84,14 @@
   gap: 20px;
 }
 
+/* Centrer les icônes et textes */
+.card-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 .contact-card {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 15px;
@@ -86,8 +100,9 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s ease;
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
 }
@@ -125,26 +140,32 @@
 
 .card-content {
   flex: 1;
+  text-align: center;
+  width: 100%;
 }
 
 .card-content h4 {
   color: var(--color-white);
   font-size: 1.1rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: 600;
+  text-align: center;
 }
 
 .card-text {
   color: var(--color-white);
   font-size: 1rem;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-weight: 500;
+  text-align: center;
+  word-break: break-word;
 }
 
 .card-description {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
   margin: 0;
+  text-align: center;
 }
 
 /* Availability Section */
@@ -155,22 +176,39 @@
   border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-.availability-header {
+.availability-header-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  text-align: center;
   margin-bottom: 25px;
+}
+
+.availability-header-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .availability-icon {
   color: var(--color-gold);
-  font-size: 1.3rem;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 215, 0, 0.3);
 }
 
-.availability-header h3 {
+.availability-title {
   color: var(--color-gold);
   font-size: 1.4rem;
   margin: 0;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
 }
 
 .availability-features {
@@ -179,15 +217,30 @@
   gap: 20px;
 }
 
+/* Centrer les icônes des features */
 .feature {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
   gap: 15px;
 }
 
+.feature-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .feature-icon {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   flex-shrink: 0;
+}
+
+.feature-content {
+  text-align: center;
+  width: 100%;
 }
 
 .feature-content h4 {
@@ -195,6 +248,7 @@
   font-size: 1rem;
   margin-bottom: 5px;
   font-weight: 600;
+  text-align: center;
 }
 
 .feature-content p {
@@ -202,6 +256,7 @@
   font-size: 0.9rem;
   margin: 0;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* Contact Form Section */
@@ -219,9 +274,19 @@
   flex-direction: column;
 }
 
+/* Centrer l'en-tête du formulaire */
 .form-header {
   margin-bottom: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-header-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .form-header h3 {
@@ -229,9 +294,10 @@
   font-size: 1.6rem;
   margin-bottom: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 15px;
+  text-align: center;
 }
 
 .form-icon {
@@ -243,12 +309,15 @@
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   margin: 0;
+  text-align: center;
 }
 
 /* Alerts */
 .alert {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 15px;
   padding: 20px;
   border-radius: 12px;
@@ -277,6 +346,13 @@
   border: 1px solid rgba(178, 34, 34, 0.4);
 }
 
+/* Centrer les icônes d'alerte */
+.alert-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
 .alert-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
@@ -291,11 +367,16 @@
   color: #ff7a7a;
 }
 
+.alert-content {
+  text-align: center;
+}
+
 .alert-content h4 {
   color: var(--color-white);
   font-size: 1.1rem;
   margin-bottom: 8px;
   font-weight: 600;
+  text-align: center;
 }
 
 .alert-content p {
@@ -303,11 +384,13 @@
   font-size: 0.95rem;
   margin-bottom: 5px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .alert-note {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.85rem;
+  text-align: center;
 }
 
 .alert-note a {
@@ -471,6 +554,7 @@
   margin-bottom: 20px;
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .note-text strong {
@@ -499,6 +583,101 @@
 .contact-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* ===== RESPONSIVE DESIGN ===== */
+
+/* Ajustements pour les cartes sur desktop */
+@media (min-width: 769px) {
+  .contact-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .card-icon-wrapper {
+    justify-content: flex-start;
+    width: auto;
+    margin-bottom: 0;
+  }
+  
+  .card-content {
+    text-align: left;
+  }
+  
+  .card-content h4,
+  .card-text,
+  .card-description {
+    text-align: left;
+  }
+  
+  .feature {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .feature-icon-wrapper {
+    justify-content: flex-start;
+    width: auto;
+    margin-bottom: 0;
+  }
+  
+  .feature-content {
+    text-align: left;
+  }
+  
+  .feature-content h4,
+  .feature-content p {
+    text-align: left;
+  }
+  
+  .form-header h3 {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .alert {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .alert-icon-wrapper {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  
+  .alert-content {
+    text-align: left;
+  }
+  
+  .alert-content h4,
+  .alert-content p,
+  .alert-note {
+    text-align: left;
+  }
+  
+  /* Sur desktop, le titre "Mes Coordonnées" reste aligné à gauche */
+  .contact-info-title-wrapper {
+    justify-content: flex-start;
+  }
+  
+  .contact-info-title {
+    text-align: left;
+  }
+  
+  /* Sur desktop, l'en-tête de disponibilité reste aligné à gauche */
+  .availability-header-wrapper {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .availability-header-icon-wrapper {
+    justify-content: flex-start;
+  }
+  
+  .availability-title {
+    text-align: left;
+    justify-content: flex-start;
+  }
+}
 
 /* Tablettes */
 @media (max-width: 1024px) {
@@ -574,6 +753,9 @@
   
   .contact-card {
     padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
   
   .card-icon {
@@ -581,9 +763,23 @@
     padding: 10px;
   }
   
-  .contact-info-title,
-  .form-header h3,
-  .availability-header h3 {
+  .card-icon-wrapper {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .card-content h4,
+  .card-text,
+  .card-description {
+    text-align: center;
+  }
+  
+  .contact-info-title {
     font-size: 1.4rem;
   }
   
@@ -593,21 +789,70 @@
   }
   
   .feature {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
     gap: 12px;
+  }
+  
+  .feature-icon-wrapper {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .feature-content {
+    text-align: center;
+  }
+  
+  .feature-content h4,
+  .feature-content p {
+    text-align: center;
   }
   
   .feature-icon {
     font-size: 1.3rem;
   }
   
+  .form-header h3 {
+    font-size: 1.4rem;
+  }
+  
   .form-subtitle {
     font-size: 0.95rem;
+  }
+  
+  .form-header h3 {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-header-icon {
+    justify-content: center;
   }
   
   .alert {
     padding: 15px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .alert-icon-wrapper {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .alert-content {
+    text-align: center;
+  }
+  
+  .alert-content h4,
+  .alert-content p,
+  .alert-note {
+    text-align: center;
   }
   
   .alert-icon {
@@ -627,6 +872,36 @@
   
   .note-text {
     font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Centrage mobile pour tous les titres */
+  .contact-info-title-wrapper {
+    justify-content: center;
+  }
+  
+  .contact-info-title {
+    text-align: center;
+  }
+  
+  .availability-header-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .availability-header-icon-wrapper {
+    justify-content: center;
+  }
+  
+  .availability-title {
+    text-align: center;
+    font-size: 1.4rem;
+    justify-content: center;
+  }
+  
+  .availability-icon {
+    font-size: 1.8rem;
+    padding: 12px;
   }
 }
 
@@ -653,11 +928,16 @@
   .contact-card {
     flex-direction: column;
     text-align: center;
+    align-items: center;
     gap: 12px;
   }
   
   .card-icon {
     align-self: center;
+  }
+  
+  .card-icon-wrapper {
+    justify-content: center;
   }
   
   .card-content h4 {
@@ -674,7 +954,7 @@
   
   .contact-info-title,
   .form-header h3,
-  .availability-header h3 {
+  .availability-title {
     font-size: 1.3rem;
   }
   
@@ -719,6 +999,7 @@
   .note-text {
     font-size: 0.85rem;
     line-height: 1.5;
+    text-align: center;
   }
 }
 
@@ -747,7 +1028,7 @@
   
   .contact-info-title,
   .form-header h3,
-  .availability-header h3 {
+  .availability-title {
     font-size: 1.2rem;
   }
   
