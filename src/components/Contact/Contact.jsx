@@ -123,7 +123,7 @@ const Contact = () => {
       icon: <FaLinkedin />,
       title: 'LinkedIn',
       content: 'Stéphane Youmbi',
-      link: 'https://linkedin.com',
+      link: 'https://www.linkedin.com/in/stephane-poutcheu-14b88829a/',
       external: true,
       color: '#0077B5',
       description: 'Profil professionnel'
