@@ -243,14 +243,14 @@ const Projects = () => {
                     )}
                   </a>
                   
-                  {/* {project.id === 1 && (
+                  {project.id === 1 && (
                     <div className="security-note">
                       <FaShieldAlt />
                       <div>
                         <strong>Sécurité :</strong> Authentification sécurisée & protection des données
                       </div>
                     </div>
-                  )} */}
+                  )}
                 </div>
               </div>
             </div>
