@@ -18,11 +18,11 @@ function About() {
     { name: "Gestion de Projet", level: 75, icon: <FaUserTie /> }
   ];
 
-//   const experiences = [
-//     { year: "2023-2024", title: "Projet Stelonne Market", description: "Développement d'une plateforme e-commerce complète" },
-//     { year: "2022-2023", title: "Formation Full Stack", description: "Perfectionnement en React, Node.js et bases de données" },
-//     { year: "2021-2022", title: "BTS Génie Logiciel", description: "Obtention du diplôme avec mention" }
-//   ];
+  // const experiences = [
+  //   { year: "2023-2024", title: "Projet Stelonne Market", description: "Développement d'une plateforme e-commerce complète" },
+  //   { year: "2022-2023", title: "Formation Full Stack", description: "Perfectionnement en React, Node.js et bases de données" },
+  //   { year: "2021-2022", title: "BTS Génie Logiciel", description: "Obtention du diplôme avec mention" }
+  // ];
 
   return (
     <section id="about" className="about">
