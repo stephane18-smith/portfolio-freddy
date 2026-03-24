@@ -25,9 +25,9 @@ import {
   FaNodeJs,
   FaWhatsapp,
   FaCalculator,
-  FaCheckDouble,
-  FaMobileAlt,
-  FaShoppingBag
+  FaRegCheckCircle,
+  FaMobile,
+  FaShoppingBasket
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import './Projects.css';
@@ -95,15 +95,15 @@ const Projects = () => {
         { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
         { name: "CSS3", icon: <FaCss3 />, color: "#1572B6" },
         { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
-        { name: "Responsive Design", icon: <FaMobileAlt />, color: "#61DAFB" }
+        { name: "Responsive Design", icon: <FaMobile />, color: "#61DAFB" }
       ],
       link: "https://bestfriends-b4ix.vercel.app",
       features: [
-        { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingBag /> },
+        { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingBasket /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
         { text: "Système de commande via WhatsApp", icon: <FaWhatsapp /> },
-        { text: "Précommande formatée automatiquement", icon: <FaCheckDouble /> },
-        { text: "Interface responsive mobile-first", icon: <FaMobileAlt /> },
+        { text: "Précommande formatée automatiquement", icon: <FaRegCheckCircle /> },
+        { text: "Interface responsive mobile-first", icon: <FaMobile /> },
         { text: "Validation des quantités et stocks", icon: <FaBox /> },
         { text: "Design moderne et épuré", icon: <FaPalette /> }
       ],
@@ -169,76 +169,28 @@ const Projects = () => {
               
               <div className="project-image">
                 <div className="image-container">
-                  {project.id === 1 ? (
-                    <img 
-                      src="/images/projects/stelonne-market.png" 
-                      alt="Stelonne Market"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              ${getPlaceholderIcon(project.id)}
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/images/projects/${project.id === 1 ? 'stelonne-market' : project.id === 2 ? 'velarion' : 'bestfriend'}.png`}
+                    alt={project.title}
+                    className="project-image-img"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      const placeholder = document.createElement('div');
+                      placeholder.className = 'image-placeholder';
+                      placeholder.innerHTML = `
+                        <div class="placeholder-content">
+                          <div class="placeholder-icon" style="color: ${project.color}">
+                            ${getPlaceholderIcon(project.id)}
                           </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  ) : project.id === 2 ? (
-                    <img 
-                      src="/images/projects/velarion.png" 
-                      alt="Maison Velarion"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              ${getPlaceholderIcon(project.id)}
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
+                          <div class="placeholder-text">
+                            <div class="project-name">${project.title}</div>
+                            <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
                           </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  ) : (
-                    <img 
-                      src="/images/projects/bestfriend.png" 
-                      alt="BestFriend Commandes"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              ${getPlaceholderIcon(project.id)}
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
-                          </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  )}
+                        </div>
+                      `;
+                      e.target.parentElement.appendChild(placeholder);
+                    }}
+                  />
                 </div>
               </div>
               
@@ -314,14 +266,14 @@ const Projects = () => {
                     </div>
                   )}
                   
-                  {/* {project.id === 3 && (
+                  {project.id === 3 && (
                     <div className="whatsapp-note">
                       <FaWhatsapp />
                       <div>
                         <strong>Commande instantanée :</strong> Redirection WhatsApp avec précommande pré-remplie
                       </div>
                     </div>
-                  )} */}
+                  )}
                 </div>
               </div>
             </div>
