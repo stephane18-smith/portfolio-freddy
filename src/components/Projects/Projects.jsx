@@ -59,7 +59,8 @@ const Projects = () => {
       role: "Développeur Full Stack",
       status: "En ligne",
       mainIcon: <FaShoppingCart />,
-      color: "#4a5d23"
+      color: "#4a5d23",
+      demoLink: "http://www.stelonne-market.online"
     },
     {
       id: 2,
@@ -85,7 +86,8 @@ const Projects = () => {
       role: "Développeur Frontend & Backend",
       status: "En développement",
       mainIcon: <FaCrown />,
-      color: "#b22222"
+      color: "#b22222",
+      demoLink: null
     },
     {
       id: 3,
@@ -97,7 +99,7 @@ const Projects = () => {
         { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
         { name: "Responsive Design", icon: <FaMobile />, color: "#61DAFB" }
       ],
-      link: "#",
+      link: "https://votre-demo-bestfriend.com", // Remplacez par votre URL de démo
       features: [
         { text: "Gestion dynamique du panier d'achat", icon: <FaCartShopping /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
@@ -110,9 +112,19 @@ const Projects = () => {
       role: "Développeur Frontend",
       status: "En ligne",
       mainIcon: <FaWhatsapp />,
-      color: "#25D366"
+      color: "#25D366",
+      demoLink: "https://votre-demo-bestfriend.com" // Remplacez par votre URL de démo
     }
   ];
+
+  const getPlaceholderIcon = (projectId) => {
+    switch(projectId) {
+      case 1: return '🛒';
+      case 2: return '👑';
+      case 3: return '💬';
+      default: return '🚀';
+    }
+  };
 
   return (
     <section id="projects" className="projects">
@@ -160,76 +172,17 @@ const Projects = () => {
               
               <div className="project-image">
                 <div className="image-container">
-                  {project.id === 1 ? (
-                    <img 
-                      src="/images/projects/stelonne-market.png" 
-                      alt="Stelonne Market"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              🛒
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
-                          </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  ) : project.id === 2 ? (
-                    <img 
-                      src="/images/projects/velarion.png" 
-                      alt="Maison Velarion"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              👑
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
-                          </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  ) : (
-                    <img 
-                      src="/images/projects/bestfriend.png" 
-                      alt="BestFriend Commandes"
-                      className="project-image-img"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        const placeholder = document.createElement('div');
-                        placeholder.className = 'image-placeholder';
-                        placeholder.innerHTML = `
-                          <div class="placeholder-content">
-                            <div class="placeholder-icon" style="color: ${project.color}">
-                              💬
-                            </div>
-                            <div class="placeholder-text">
-                              <div class="project-name">${project.title}</div>
-                              <div class="project-tech">${project.technologies.map(t => t.name).join(' | ')}</div>
-                            </div>
-                          </div>
-                        `;
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  )}
+                  <div className="image-placeholder">
+                    <div className="placeholder-content">
+                      <div className="placeholder-icon" style={{ color: project.color, fontSize: '4rem' }}>
+                        {getPlaceholderIcon(project.id)}
+                      </div>
+                      <div className="placeholder-text">
+                        <div className="project-name">{project.title}</div>
+                        <div className="project-tech">{project.technologies.map(t => t.name).join(' | ')}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -263,7 +216,7 @@ const Projects = () => {
                         className="tech-tag"
                         style={{ 
                           borderColor: tech.color,
-                          background: `linear-gradient(135deg, rgba(${parseInt(tech.color.slice(1,3), 16)}, ${parseInt(tech.color.slice(3,5), 16)}, ${parseInt(tech.color.slice(5,7), 16)}, 0.3), rgba(${parseInt(tech.color.slice(1,3), 16)}, ${parseInt(tech.color.slice(3,5), 16)}, ${parseInt(tech.color.slice(5,7), 16)}, 0.15))`
+                          background: `linear-gradient(135deg, ${tech.color}30, ${tech.color}15)`
                         }}
                       >
                         <span className="tech-icon" style={{ color: tech.color }}>
@@ -276,27 +229,30 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  <a 
-                    href={project.link} 
-                    target={project.id === 1 || project.id === 3 ? "_blank" : "_self"} 
-                    rel={project.id === 1 || project.id === 3 ? "noopener noreferrer" : ""}
-                    className={`project-link ${(project.id === 1 || project.id === 3) ? 'link-live' : 'link-coming'}`}
-                  >
-                    {(project.id === 1 || project.id === 3) ? (
-                      <>
-                        <FaGlobe className="link-icon" />
-                        {project.id === 1 ? "Visiter le site" : "Voir la démo"}
-                        <FaExternalLinkAlt className="link-external" />
-                      </>
-                    ) : (
-                      <>
-                        <FaWrench className="link-icon" />
-                        En développement
-                      </>
-                    )}
-                  </a>
+                  {project.demoLink && project.status === "En ligne" && (
+                    <a 
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link link-live"
+                    >
+                      <FaGlobe className="link-icon" />
+                      {project.id === 1 ? "Visiter le site" : "Voir la démo"}
+                      <FaExternalLinkAlt className="link-external" />
+                    </a>
+                  )}
                   
-                  {project.id === 1 && (
+                  {project.status !== "En ligne" && (
+                    <a 
+                      href="#"
+                      className="project-link link-coming"
+                    >
+                      <FaWrench className="link-icon" />
+                      En développement
+                    </a>
+                  )}
+                  
+                  {project.id === 1 && project.status === "En ligne" && (
                     <div className="security-note">
                       <FaShieldAlt />
                       <div>
@@ -305,7 +261,7 @@ const Projects = () => {
                     </div>
                   )}
                   
-                  {project.id === 3 && (
+                  {project.id === 3 && project.status === "En ligne" && (
                     <div className="whatsapp-note">
                       <FaWhatsapp />
                       <div>
