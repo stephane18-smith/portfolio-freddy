@@ -26,8 +26,8 @@ import {
   FaWhatsapp,
   FaCalculator,
   FaListCheck,
-  // FaShoppingCart,
-  FaMobile
+  FaMobileAlt,
+  FaShoppingBag
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import './Projects.css';
@@ -59,8 +59,7 @@ const Projects = () => {
       role: "Développeur Full Stack",
       status: "En ligne",
       mainIcon: <FaShoppingCart />,
-      color: "#4a5d23",
-      demoLink: "http://www.stelonne-market.online"
+      color: "#4a5d23"
     },
     {
       id: 2,
@@ -86,8 +85,7 @@ const Projects = () => {
       role: "Développeur Frontend & Backend",
       status: "En développement",
       mainIcon: <FaCrown />,
-      color: "#b22222",
-      demoLink: null
+      color: "#b22222"
     },
     {
       id: 3,
@@ -97,23 +95,22 @@ const Projects = () => {
         { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
         { name: "CSS3", icon: <FaCss3 />, color: "#1572B6" },
         { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
-        { name: "Responsive Design", icon: <FaMobile />, color: "#61DAFB" }
+        { name: "Responsive Design", icon: <FaMobileAlt />, color: "#61DAFB" }
       ],
-      link: "https://votre-demo-bestfriend.com", // Remplacez par votre URL de démo
+      link: "#",
       features: [
-        { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingCart /> },
+        { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingBag /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
         { text: "Système de commande via WhatsApp", icon: <FaWhatsapp /> },
         { text: "Précommande formatée automatiquement", icon: <FaListCheck /> },
-        { text: "Interface responsive mobile-first", icon: <FaMobile /> },
+        { text: "Interface responsive mobile-first", icon: <FaMobileAlt /> },
         { text: "Validation des quantités et stocks", icon: <FaBox /> },
         { text: "Design moderne et épuré", icon: <FaPalette /> }
       ],
       role: "Développeur Frontend",
       status: "En ligne",
       mainIcon: <FaWhatsapp />,
-      color: "#25D366",
-      demoLink: "https://votre-demo-bestfriend.com" // Remplacez par votre URL de démo
+      color: "#25D366"
     }
   ];
 
@@ -229,9 +226,9 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  {project.demoLink && project.status === "En ligne" && (
+                  {project.link && project.link !== "#" && project.status === "En ligne" ? (
                     <a 
-                      href={project.demoLink}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link link-live"
@@ -240,12 +237,20 @@ const Projects = () => {
                       {project.id === 1 ? "Visiter le site" : "Voir la démo"}
                       <FaExternalLinkAlt className="link-external" />
                     </a>
-                  )}
-                  
-                  {project.status !== "En ligne" && (
+                  ) : project.status === "En ligne" ? (
                     <a 
                       href="#"
                       className="project-link link-coming"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <FaWrench className="link-icon" />
+                      Démo bientôt disponible
+                    </a>
+                  ) : (
+                    <a 
+                      href="#"
+                      className="project-link link-coming"
+                      onClick={(e) => e.preventDefault()}
                     >
                       <FaWrench className="link-icon" />
                       En développement
