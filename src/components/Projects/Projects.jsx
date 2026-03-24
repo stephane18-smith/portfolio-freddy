@@ -97,7 +97,7 @@ const Projects = () => {
         { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
         { name: "Responsive Design", icon: <FaMobileAlt />, color: "#61DAFB" }
       ],
-      link: "#",
+      link: "https://bestfriends-b4ix.vercel.app",
       features: [
         { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingBag /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
@@ -294,7 +294,7 @@ const Projects = () => {
                     {(project.id === 1 || project.id === 3) ? (
                       <>
                         <FaGlobe className="link-icon" />
-                        {project.id === 1 ? "Visiter le site" : "Voir la démo"}
+                        {project.id === 1 ? "Visiter le site" : "Voir le site"}
                         <FaExternalLinkAlt className="link-external" />
                       </>
                     ) : (
