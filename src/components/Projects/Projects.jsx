@@ -26,7 +26,7 @@ import {
   FaWhatsapp,
   FaCalculator,
   FaListCheck,
-  FaCartShopping,
+  // FaShoppingCart,
   FaMobile
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
@@ -101,7 +101,7 @@ const Projects = () => {
       ],
       link: "https://votre-demo-bestfriend.com", // Remplacez par votre URL de démo
       features: [
-        { text: "Gestion dynamique du panier d'achat", icon: <FaCartShopping /> },
+        { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingCart /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
         { text: "Système de commande via WhatsApp", icon: <FaWhatsapp /> },
         { text: "Précommande formatée automatiquement", icon: <FaListCheck /> },
