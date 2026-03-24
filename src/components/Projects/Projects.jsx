@@ -294,7 +294,7 @@ const Projects = () => {
                     {(project.id === 1 || project.id === 3) ? (
                       <>
                         <FaGlobe className="link-icon" />
-                        {project.id === 1 ? "Visiter le site" : "Voir le site"}
+                        {project.id === 1 ? "Visiter le site" : "Visiter le site"}
                         <FaExternalLinkAlt className="link-external" />
                       </>
                     ) : (
@@ -314,14 +314,14 @@ const Projects = () => {
                     </div>
                   )}
                   
-                  {project.id === 3 && (
+                  {/* {project.id === 3 && (
                     <div className="whatsapp-note">
                       <FaWhatsapp />
                       <div>
                         <strong>Commande instantanée :</strong> Redirection WhatsApp avec précommande pré-remplie
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>
