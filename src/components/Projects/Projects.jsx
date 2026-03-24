@@ -27,12 +27,8 @@ import {
   FaCalculator,
   FaCheckDouble,
   FaMobileAlt,
-  FaShoppingBag,
-  FaUserFriends,
-  FaChartBar,
-  FaCog,
-  FaEye,
-  FaHeart
+  FaShoppingBag
+  // FaUserFriends
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import './Projects.css';
@@ -119,15 +115,6 @@ const Projects = () => {
     }
   ];
 
-  const getPlaceholderIcon = (projectId) => {
-    switch(projectId) {
-      case 1: return '🛒';
-      case 2: return '👑';
-      case 3: return '💬';
-      default: return '🚀';
-    }
-  };
-
   return (
     <section id="projects" className="projects">
       <div className="container">
@@ -169,22 +156,6 @@ const Projects = () => {
                     {project.mainIcon}
                   </div>
                   <h3 className="project-title">{project.title}</h3>
-                </div>
-              </div>
-              
-              <div className="project-image">
-                <div className="image-container">
-                  <div className="image-placeholder">
-                    <div className="placeholder-content">
-                      <div className="placeholder-icon" style={{ color: project.color, fontSize: '4rem' }}>
-                        {getPlaceholderIcon(project.id)}
-                      </div>
-                      <div className="placeholder-text">
-                        <div className="project-name">{project.title}</div>
-                        <div className="project-tech">{project.technologies.map(t => t.name).join(' | ')}</div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               
@@ -231,7 +202,7 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  {project.link && project.link !== "#" && project.status === "En ligne" ? (
+                  {project.link && project.link !== "#" ? (
                     <a 
                       href={project.link}
                       target="_blank"
@@ -242,27 +213,18 @@ const Projects = () => {
                       {project.id === 1 ? "Visiter le site" : "Voir la démo"}
                       <FaExternalLinkAlt className="link-external" />
                     </a>
-                  ) : project.status === "En ligne" ? (
-                    <a 
-                      href="#"
-                      className="project-link link-coming"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <FaWrench className="link-icon" />
-                      Démo bientôt disponible
-                    </a>
                   ) : (
-                    <a 
-                      href="#"
+                    <button 
                       className="project-link link-coming"
-                      onClick={(e) => e.preventDefault()}
+                      disabled
+                      style={{ cursor: 'not-allowed' }}
                     >
                       <FaWrench className="link-icon" />
-                      En développement
-                    </a>
+                      {project.status === "En ligne" ? "Démo bientôt disponible" : "En développement"}
+                    </button>
                   )}
                   
-                  {project.id === 1 && project.status === "En ligne" && (
+                  {project.id === 1 && (
                     <div className="security-note">
                       <FaShieldAlt />
                       <div>
@@ -271,7 +233,7 @@ const Projects = () => {
                     </div>
                   )}
                   
-                  {project.id === 3 && project.status === "En ligne" && (
+                  {project.id === 3 && (
                     <div className="whatsapp-note">
                       <FaWhatsapp />
                       <div>
