@@ -25,9 +25,14 @@ import {
   FaNodeJs,
   FaWhatsapp,
   FaCalculator,
-  FaListCheck,
+  FaCheckDouble,
   FaMobileAlt,
-  FaShoppingBag
+  FaShoppingBag,
+  FaUserFriends,
+  FaChartBar,
+  FaCog,
+  FaEye,
+  FaHeart
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import './Projects.css';
@@ -102,7 +107,7 @@ const Projects = () => {
         { text: "Gestion dynamique du panier d'achat", icon: <FaShoppingBag /> },
         { text: "Calcul automatique des montants et totaux", icon: <FaCalculator /> },
         { text: "Système de commande via WhatsApp", icon: <FaWhatsapp /> },
-        { text: "Précommande formatée automatiquement", icon: <FaListCheck /> },
+        { text: "Précommande formatée automatiquement", icon: <FaCheckDouble /> },
         { text: "Interface responsive mobile-first", icon: <FaMobileAlt /> },
         { text: "Validation des quantités et stocks", icon: <FaBox /> },
         { text: "Design moderne et épuré", icon: <FaPalette /> }
