@@ -265,15 +265,7 @@ const Projects = () => {
                       </div>
                     </div>
                   )}
-                  
-                  {project.id === 3 && (
-                    <div className="whatsapp-note">
-                      <FaWhatsapp />
-                      <div>
-                        <strong>Commande instantanée :</strong> Redirection WhatsApp avec précommande pré-remplie
-                      </div>
-                    </div>
-                  )}
+                
                 </div>
               </div>
             </div>
