@@ -27,7 +27,9 @@ import {
   FaCalculator,
   FaRegCheckCircle,
   FaMobile,
-  FaShoppingBasket
+  FaShoppingBasket,
+  FaPhp,
+  FaMoneyBillWave
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import './Projects.css';
@@ -111,6 +113,34 @@ const Projects = () => {
       status: "En ligne",
       mainIcon: <FaWhatsapp />,
       color: "#25D366"
+    },
+    {
+      id: 4,
+      title: "MICS - Mouaha Industry Company SARL",
+      description: "Site institutionnel et boutique en ligne pour Mouaha Industry Company SARL. Plateforme complète avec présentation de l'entreprise, catalogue produits et système de paiement intégré.",
+      technologies: [
+        { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
+        { name: "PHP", icon: <FaPhp />, color: "#777BB4" },
+        { name: "JavaScript", icon: <FaJs />, color: "#F7DF1E" },
+        { name: "React", icon: <FaReact />, color: "#61DAFB" },
+        { name: "TypeScript", icon: <SiTypescript />, color: "#007ACC" },
+        { name: "API Paiement Mobile Money", icon: <FaMoneyBillWave />, color: "#4CAF50" },
+        { name: "Responsive Design", icon: <FaMobile />, color: "#61DAFB" }
+      ],
+      link: "https://www.mouahaindustrycompanysarl.com",
+      features: [
+        { text: "Site vitrine institutionnel complet", icon: <FaGlobe /> },
+        { text: "Boutique en ligne intégrée", icon: <FaShoppingBasket /> },
+        { text: "Catalogue produits dynamique", icon: <FaBox /> },
+        { text: "Paiement Mobile Money (MTN)", icon: <FaMoneyBillWave /> },
+        { text: "Panier d'achat sécurisé", icon: <FaShoppingCart /> },
+        { text: "Interface utilisateur responsive", icon: <FaMobile /> },
+        { text: "Gestion des commandes en temps réel", icon: <FaChartLine /> }
+      ],
+      role: "Développeur Full Stack",
+      status: "En ligne",
+      mainIcon: <FaGlobe />,
+      color: "#1a5276"
     }
   ];
 
@@ -119,6 +149,7 @@ const Projects = () => {
       case 1: return '🛒';
       case 2: return '👑';
       case 3: return '💬';
+      case 4: return '🏭';
       default: return '🚀';
     }
   };
@@ -170,7 +201,7 @@ const Projects = () => {
               <div className="project-image">
                 <div className="image-container">
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/projects/${project.id === 1 ? 'stelonne-market' : project.id === 2 ? 'velarion' : 'bestfriend'}.png`}
+                    src={`${process.env.PUBLIC_URL}/images/projects/${project.id === 1 ? 'stelonne-market' : project.id === 2 ? 'velarion' : project.id === 3 ? 'bestfriend' : 'mouaha'}.png`}
                     alt={project.title}
                     className="project-image-img"
                     onError={(e) => {
@@ -237,36 +268,50 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  <a 
-                    href={project.link} 
-                    target={project.id === 1 || project.id === 3 ? "_blank" : "_self"} 
-                    rel={project.id === 1 || project.id === 3 ? "noopener noreferrer" : ""}
-                    className={`project-link ${(project.id === 1 || project.id === 3) ? 'link-live' : 'link-coming'}`}
-                  >
-                    {(project.id === 1 || project.id === 3) ? (
-                      <>
-                        <FaGlobe className="link-icon" />
-                        {project.id === 1 ? "Visiter le site" : "Visiter le site"}
-                        <FaExternalLinkAlt className="link-external" />
-                      </>
-                    ) : (
-                      <>
-                        <FaWrench className="link-icon" />
-                        En développement
-                      </>
-                    )}
-                  </a>
-                  
-                  {project.id === 1 && (
-                    <div className="security-note">
-                      <FaShieldAlt />
-                      <div>
-                        <strong>Sécurité :</strong> Authentification sécurisée & protection des données
-                      </div>
-                    </div>
-                  )}
-                
-                </div>
+  <div className="links-group">
+    <a 
+      href={project.link} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className={`project-link ${project.status === "En ligne" ? 'link-live' : 'link-coming'}`}
+    >
+      {project.status === "En ligne" ? (
+        <>
+          <FaGlobe className="link-icon" />
+          visiter le site
+          <FaExternalLinkAlt className="link-external" />
+        </>
+      ) : (
+        <>
+          <FaWrench className="link-icon" />
+          En développement
+        </>
+      )}
+    </a>
+    
+    {project.id === 4 && (
+      <a 
+        href="https://www.mouahaindustrycompanysarl.com/boutique"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="project-link boutique-link"
+      >
+        <FaShoppingBasket className="link-icon" />
+        Boutique en ligne
+        <FaExternalLinkAlt className="link-external" />
+      </a>
+    )}
+  </div>
+  
+  {project.id === 1 && (
+    <div className="security-note">
+      <FaShieldAlt />
+      <div>
+        <strong>Sécurité :</strong> Authentification sécurisée & protection des données
+      </div>
+    </div>
+  )}
+</div>
               </div>
             </div>
           ))}

@@ -7,7 +7,7 @@ const Experience = () => {
       id: 1,
       title: "Développeur Full Stack",
       company: "MOUAHA INDUSTRY COMPANY SARL",
-      period: "Novembre 2025 - Présent",
+      period: "Novembre 2025 - Mars 2026",
       location: "Douala, Cameroun",
       description: "Développement d'applications web complètes.",
       technologies: ["React", "MySQL", "HTML/CSS", "JavaScript"]
@@ -25,7 +25,7 @@ const Experience = () => {
       id: 3,
       title: "Stagiaire Développeur Frontend",
       company: "NTIAG-DA",
-      period: "Juin 2024 - Septembre 2024",
+      period: "Juin 2023 - Septembre 2023",
       location: "Douala, Cameroun",
       description: "Développement d'interfaces utilisateur avec React JS.",
       technologies: ["HTML", "CSS", "JavaScript", "Github"]
