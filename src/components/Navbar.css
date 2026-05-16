@@ -1,0 +1,829 @@
+/* src/components/Navbar.css - Version Orange, Bleu sombre & Or */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(26, 42, 79, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border-bottom: 1px solid #E67E22;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #E67E22 0%, #F39C12 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #F5E6D3;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E67E22, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FFD700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-header-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  color: #F5E6D3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cart-header-icon svg {
+  font-size: 1.3rem;
+}
+
+.cart-header-icon:hover {
+  background: rgba(230, 126, 34, 0.2);
+  transform: scale(1.05);
+  color: #FFD700;
+}
+
+.cart-header-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, #E67E22, #D35400);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceCart 0.3s ease;
+}
+
+@keyframes bounceCart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #F5E6D3;
+}
+
+/* ==================== RESPONSIVE MOBILE ==================== */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.8rem 1rem;
+    width: 100%;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.4rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #1a2a4f;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: left 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(230, 126, 34, 0.2);
+    border-radius: 40px;
+  }
+  
+  .cart-header-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .cart-header-icon svg {
+    font-size: 1.1rem;
+  }
+}
+
+/* Version avec logo image - conservée */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(26, 42, 79, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border-bottom: 1px solid #E67E22;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #E67E22 0%, #F39C12 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #F5E6D3;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E67E22, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FFD700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-header-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  color: #F5E6D3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cart-header-icon svg {
+  font-size: 1.3rem;
+}
+
+.cart-header-icon:hover {
+  background: rgba(230, 126, 34, 0.2);
+  transform: scale(1.05);
+  color: #FFD700;
+}
+
+.cart-header-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, #E67E22, #D35400);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #F5E6D3;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo-image {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #1a2a4f;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    transition: left 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(230, 126, 34, 0.2);
+    border-radius: 40px;
+  }
+}
+
+/* Version ultra grande - logo encore plus dominant */
+.logo-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 0;
+  border: none;
+}
+
+.logo-text {
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .logo-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
+
+
+/* Style pour le lien Contact dans la navbar */
+.contact-nav-link {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #F5E6D3;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.contact-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E67E22, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.contact-nav-link:hover::after {
+  width: 100%;
+}
+
+.contact-nav-link:hover {
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  .contact-nav-link {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .contact-nav-link::after {
+    display: none;
+  }
+  
+  .contact-nav-link:hover {
+    background: rgba(230, 126, 34, 0.2);
+    border-radius: 40px;
+  }
+}
+/* src/components/Navbar.css - Version avec header collé en haut */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(26, 42, 79, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border-bottom: 1px solid #E67E22;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #E67E22 0%, #F39C12 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #F5E6D3;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E67E22, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FFD700;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-header-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 50%;
+  color: #F5E6D3;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cart-header-icon svg {
+  font-size: 1.3rem;
+}
+
+.cart-header-icon:hover {
+  background: rgba(230, 126, 34, 0.2);
+  transform: scale(1.05);
+  color: #FFD700;
+}
+
+.cart-header-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, #E67E22, #D35400);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceCart 0.3s ease;
+}
+
+@keyframes bounceCart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #F5E6D3;
+}
+
+/* ==================== RESPONSIVE MOBILE - HEADER COLLÉ EN HAUT ==================== */
+@media (max-width: 768px) {
+  .navbar {
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .nav-container {
+    padding: 0.5rem 1rem !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 52px !important;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 52px);
+    background: #1a2a4f;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    transition: left 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+    padding-top: 2rem;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(230, 126, 34, 0.2);
+    border-radius: 40px;
+  }
+  
+  .cart-header-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .cart-header-icon svg {
+    font-size: 1rem;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.4rem 0.8rem !important;
+  }
+  
+  .logo-text {
+    font-size: 0.9rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+  
+  .cart-header-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .cart-header-icon svg {
+    font-size: 0.9rem;
+  }
+  
+  .nav-links {
+    top: 48px !important;
+    height: calc(100vh - 48px);
+  }
+  
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
+/* Style pour le lien Contact dans la navbar */
+.contact-nav-link {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #F5E6D3;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.contact-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E67E22, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.contact-nav-link:hover::after {
+  width: 100%;
+}
+
+.contact-nav-link:hover {
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  .contact-nav-link {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .contact-nav-link::after {
+    display: none;
+  }
+  
+  .contact-nav-link:hover {
+    background: rgba(230, 126, 34, 0.2);
+    border-radius: 40px;
+  }
+}
+

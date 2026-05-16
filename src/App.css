@@ -1,130 +1,144 @@
-/* Variables globales */
-:root {
-    --color-black: #0a0a0a;
-    --color-military-green: #4a5d23;
-    --color-red: #b22222;
-    --color-gold: #ffd700;
-    --color-dark-gold: #daa520;
-    --color-white: #ffffff;
-    --color-gray: #333333;
-    --color-light-gray: #f5f5f5;
+/* src/App.css - Avec animations 3D - Version Orange, Bleu sombre & Or */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Animations 3D et soft */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Effets 3D pour les cartes */
+.card-3d {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(230, 126, 34, 0.15);
+}
+
+/* Effet glassmorphism - version orange/bleu */
+.glass-effect {
+  background: rgba(26, 42, 79, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 126, 34, 0.3);
+}
+
+/* Style pour le bouton WhatsApp - conservé */
+.whatsapp-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+  color: white;
+  animation: float 2s ease-in-out infinite;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 80px;
+  background: #1a2a4f;
+  color: #FFD700;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-10px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    width: 55px;
+    height: 55px;
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
   
-  /* Reset et styles de base */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .whatsapp-tooltip {
+    display: none;
   }
-  
-  body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  
-  /* Classes utilitaires */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  section {
-    padding: 80px 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    color: var(--color-gold);
-  }
-  
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, var(--color-red), var(--color-gold));
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, var(--color-military-green), var(--color-red));
-    color: var(--color-white);
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-  
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.3);
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    border: 2px solid var(--color-gold);
-    color: var(--color-gold);
-  }
-  
-  .btn-secondary:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    section {
-      padding: 60px 0;
-      min-height: auto;
-    }
-    
-    .section-title {
-      font-size: 2rem;
-    }
-    
-    .container {
-      padding: 0 15px;
-    }
-  }
-  
-  /* Sélection de texte */
-  ::selection {
-    background-color: rgba(218, 165, 32, 0.3);
-    color: white;
-  }
-  
-  /* Images responsives */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Liens */
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-     k
-  a:hover {
-    color: var(--color-gold);
-  }
+}
