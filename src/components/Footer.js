@@ -38,9 +38,9 @@ function Footer() {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook />
             </a>
-            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+            {/* <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
               <FaPinterest />
-            </a>
+            </a> */}
             <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Tiktok">
               <FaTiktok />
             </a>
@@ -51,7 +51,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2026 MD-Shop - Tous droits réservés | Cameroun</p>
+        <p>&copy; 2026 MD-Shop - Tous droits réservés | Douala - Cameroun</p>
       </div>
     </footer>
   );
