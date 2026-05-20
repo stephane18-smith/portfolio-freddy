@@ -1,10 +1,9 @@
-// src/pages/PortfolioHome.js - Version sans effet souris et sans "Découvrir"
+// src/pages/PortfolioHome.js - Version corrigée (imports nettoyés)
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { 
   FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiCode, FiMonitor, 
-  FiDatabase, FiTool, FiAward, FiBriefcase, FiBookOpen, FiExternalLink, 
-  FiArrowRight, FiUser, FiCheckCircle, FiDownload, FiFileText 
+  FiDatabase, FiTool, FiAward, FiBriefcase, FiExternalLink, 
+  FiArrowRight, FiUser, FiDownload, FiFileText 
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
@@ -31,7 +30,6 @@ function PortfolioHome() {
       observer.observe(el);
     });
 
-    // Log des chemins d'images au chargement
     console.log('📸 Chemins des images:');
     console.log('Photo de profil:', portfolioData.photo);
     portfolioData.projects.forEach(project => {
