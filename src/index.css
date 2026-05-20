@@ -1,129 +1,46 @@
-/* src/index.css - À mettre ABSOLUMENT au début */
-html, body, #root {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: linear-gradient(135deg, #1a2a4f 0%, #E67E22 100%) !important;
-  min-height: 100vh;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #1a2a4f;
-  overflow-x: hidden;
-  background: transparent !important;
-}
-
-/* Suppression de la scrollbar */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-  display: none;
-}
-
+/* src/index.css - Thème Noir, Rouge et Or */
 * {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-/* src/index.css - Version Orange, Bleu sombre & Or */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FFF8F0 0%, #FFF2E0 100%);
-  color: #1a2a4f;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F0E6D8;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #E67E22, #D35400);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #D35400, #E67E22);
-}
-
-/* Animation de chargement */
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  100% {
-    background-position: 1000px 0;
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
   }
-}
-
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-}
-/* src/index.css - Suppression de la scrollbar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Supprimer la scrollbar sur tous les navigateurs */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-  display: none;
-}
-
-/* Pour Firefox */
-* {
-  scrollbar-width: none;
-}
-
-/* Pour IE et Edge */
-* {
-  -ms-overflow-style: none;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FFF8F0 0%, #FFF2E0 100%);
-  color: #1a2a4f;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-/* Animation de chargement */
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
   }
-  100% {
-    background-position: 1000px 0;
+  
+  /* Suppression de la scrollbar */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    display: none;
   }
-}
-
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-}
+  
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  /* Animation de chargement */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .skeleton {
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }

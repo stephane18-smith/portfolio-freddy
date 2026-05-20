@@ -1,144 +1,57 @@
-/* src/App.css - Avec animations 3D - Version Orange, Bleu sombre & Or */
+/* src/App.css */
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.main-content {
-  flex: 1;
-}
-
-/* Animations 3D et soft */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes rotate3d {
-  0% {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-  100% {
-    transform: perspective(1000px) rotateY(360deg);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.float-animation {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Effets 3D pour les cartes */
-.card-3d {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-style: preserve-3d;
-}
-
-.card-3d:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(230, 126, 34, 0.15);
-}
-
-/* Effet glassmorphism - version orange/bleu */
-.glass-effect {
-  background: rgba(26, 42, 79, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(230, 126, 34, 0.3);
-}
-
-/* Style pour le bouton WhatsApp - conservé */
-.whatsapp-button {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 1000;
-  color: white;
-  animation: float 2s ease-in-out infinite;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-}
-
-.whatsapp-tooltip {
-  position: absolute;
-  right: 80px;
-  background: #1a2a4f;
-  color: #FFD700;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.whatsapp-button:hover .whatsapp-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-10px);
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@media (max-width: 768px) {
-  .whatsapp-button {
-    width: 55px;
-    height: 55px;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
-  .whatsapp-tooltip {
-    display: none;
+  .main-content {
+    flex: 1;
   }
-}
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Bouton de téléchargement CV */
+  .hero-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid rgba(198, 40, 40, 0.6);
+    color: #C62828;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .hero-download-btn:hover {
+    transform: translateY(-3px);
+    border-color: #C62828;
+    background: rgba(198, 40, 40, 0.1);
+    gap: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-download-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
